@@ -27,8 +27,8 @@ def user_input_features():
     SEX = st.sidebar.selectbox('Titanic Passenger Sex',('Male','Female'))
     SEXM = 1 if SEX == 'Male' else 0
     SEXF = 1 if SEX == 'Female' else 0
-    SIBSP = st.sidebar.number_input("No. of siblings and spouses of passenger on board")
-    PARCH = st.sidebar.number_input("No. of parents and children of passenger on board")
+    SIBSP = st.sidebar.number_input("No. of siblings and spouses of passenger on board",step=1)
+    PARCH = st.sidebar.number_input("No. of parents and children of passenger on board",step=1)
     AGE = st.sidebar.number_input("Age of the passenger")
     FARE = st.sidebar.number_input("Fare")
     data = {'AGE':AGE,
