@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Sep 24 13:01:17 2020
+Created on Thu Jul 14 13:07:17 2025
 
 """
 
 import pandas as pd
 import streamlit as st 
 from sklearn.linear_model import LogisticRegression
-from utils import wrangle
 import pickle
 import sys
 import path
+from utils import wrangle
+
 
 
 
