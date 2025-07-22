@@ -47,7 +47,7 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-Titanic_train = pd.read_csv("/mount/src/titanic_survival/Titanic_train.csv")
+Titanic_train = pd.read_csv("https://drive.google.com/file/d/1J_hVXcAMacpEsSRpLmpl1qM7eJ6L8r8M/view")
 Titanic_train1 = Titanic_train.drop(columns=['PassengerId','Name','Ticket','Cabin'])
 Titanic_train1['Embarked']=Titanic_train1['Embarked'].fillna('S')
 Titanic_train1=Titanic_train1.dropna()
