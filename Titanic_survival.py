@@ -7,10 +7,6 @@ Created on Thu Jul 14 13:07:17 2025
 import pandas as pd
 import streamlit as st 
 from sklearn.linear_model import LogisticRegression
-import pickle
-import sys
-import path
-from utils import wrangle
 
 
 
@@ -50,17 +46,7 @@ def user_input_features():
     features = pd.DataFrame(data,index = [0])
     return features 
     
-df = user_input_features()
-st.subheader('User Input parameters')
-st.write(df)
-
-dir = path.Path(__file__).abspath()
-sys.append.path(dir.parent.parent)
-path_to_data = '.Titanic_train.csv'
-
-with open(path_to_data, 'rb') as file:
-    Titanic_train = pickle.load(file)
-    
+Titanic_train=pd.read_csv('Titanic_train.csv')    
 Titanic_train1 = Titanic_train.drop(columns=['PassengerId','Name','Ticket','Cabin'])
 Titanic_train1['Embarked']=Titanic_train1['Embarked'].fillna('S')
 Titanic_train1=Titanic_train1.dropna()
