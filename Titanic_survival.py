@@ -29,7 +29,7 @@ def user_input_features():
     SEXF = 1 if SEX == 'Female' else 0
     SIBSP = st.sidebar.number_input("No. of siblings and spouses of passenger on board",step=1)
     PARCH = st.sidebar.number_input("No. of parents and children of passenger on board",step=1)
-    AGE = st.sidebar.number_input("Age of the passenger")
+    AGE = st.sidebar.number_input("Age of the passenger",step=1)
     FARE = st.sidebar.number_input("Fare")
     data = {'AGE':AGE,
             'SIBSP':SIBSP,
