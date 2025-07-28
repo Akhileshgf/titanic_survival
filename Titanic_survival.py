@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 14 13:07:17 2025
-
-"""
-
 import pandas as pd
 import streamlit as st 
 from sklearn.linear_model import LogisticRegression
@@ -27,10 +21,10 @@ def user_input_features():
     SEX = st.sidebar.selectbox('Titanic Passenger Sex',('Male','Female'))
     SEXM = 1 if SEX == 'Male' else 0
     SEXF = 1 if SEX == 'Female' else 0
-    SIBSP = st.sidebar.number_input("No. of siblings and spouses of passenger on board",step=1)
-    PARCH = st.sidebar.number_input("No. of parents and children of passenger on board",step=1)
-    AGE = st.sidebar.number_input("Age of the passenger",step=1)
-    FARE = st.sidebar.number_input("Fare")
+    SIBSP = st.sidebar.number_input("No. of siblings and spouses of passenger on board",min_value=0,step=1)
+    PARCH = st.sidebar.number_input("No. of parents and children of passenger on board",min_value=0,step=1)
+    AGE = st.sidebar.number_input("Age of the passenger",min_value=1,step=1)
+    FARE = st.sidebar.number_input("Fare",min_value=0)
     data = {'AGE':AGE,
             'SIBSP':SIBSP,
             'PARCH':PARCH,
